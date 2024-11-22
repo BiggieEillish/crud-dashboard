@@ -1,17 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './app/**/*.{js,ts,jsx,tsx}', // include your project paths to apply Tailwind
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
+    extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'), // Ensure all necessary plugins are included
+  ],
 };
