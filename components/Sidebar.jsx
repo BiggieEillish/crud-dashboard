@@ -5,20 +5,16 @@ import { navigation } from '../utils/data';
 import { classNames } from '@/utils/helpers';
 import SidebarDropdown from './SidebarDropdown';
 import {
-  HomeIcon,
   UsersIcon,
-  FolderIcon,
-  CalendarIcon,
-  DocumentDuplicateIcon,
-  ChartPieIcon,
   Cog6ToothIcon,
+  DocumentDuplicateIcon,
 } from '@heroicons/react/24/outline';
 
 export default function Sidebar() {
   const router = useRouter();
 
   return (
-    <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
+    <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-blue-100 px-6 pb-4">
       <div className="flex h-16 shrink-0 items-center">
         <img
           alt="Your Company"
@@ -57,6 +53,38 @@ export default function Sidebar() {
                   )}
                 >
                   All Customer Info
+                </a>
+              </li>
+            </ul>
+          </SidebarDropdown>
+
+
+          <SidebarDropdown title="Contracts" icon={DocumentDuplicateIcon}>
+            <ul role="list" className="flex flex-col gap-y-2">
+              <li>
+                <a
+                  href="/addContract"
+                  className={classNames(
+                    router.pathname === '/addContract'
+                      ? 'text-indigo-600'
+                      : 'text-gray-700 hover:text-indigo-600',
+                    'group flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold'
+                  )}
+                >
+                  Add Contract
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/allContractInfo"
+                  className={classNames(
+                    router.pathname === '/allContractInfo'
+                      ? 'text-indigo-600'
+                      : 'text-gray-700 hover:text-indigo-600',
+                    'group flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold'
+                  )}
+                >
+                  All Contract Info
                 </a>
               </li>
             </ul>
