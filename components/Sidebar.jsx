@@ -14,7 +14,7 @@ export default function Sidebar() {
   const router = useRouter();
 
   return (
-    <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-blue-100 px-6 pb-4">
+    <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-custom1 px-6 pb-4">
       <div className="flex h-16 shrink-0 items-center">
         <img
           alt="Your Company"
@@ -97,7 +97,7 @@ export default function Sidebar() {
                 className={classNames(
                   router.pathname === item.href
                     ? 'bg-gray-50 text-indigo-600'
-                    : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600',
+                    : 'text-gray-500 hover:bg-gray-50 hover:text-indigo-600',
                   'group flex gap-x-3 rounded-md p-2 text-sm font-semibold'
                 )}
               >
@@ -107,7 +107,7 @@ export default function Sidebar() {
                     router.pathname === item.href
                       ? 'text-indigo-600'
                       : 'text-gray-400 group-hover:text-indigo-600',
-                    'h-6 w-6 shrink-0'
+                    'h-6 w-6 shrink-0 stroke-custom5'
                   )}
                 />
                 {item.name}
